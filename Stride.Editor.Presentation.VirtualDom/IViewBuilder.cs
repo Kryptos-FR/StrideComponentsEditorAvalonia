@@ -12,8 +12,8 @@ namespace Stride.Editor.Presentation
         Types.IView Build();
         IViewBuilder Content(AvaloniaProperty property, Types.IView content);
         IViewBuilder ContentMultiple(AvaloniaProperty property, IEnumerable<Types.IView> content);
-        IViewBuilder Property<TValue>(AvaloniaProperty property, TValue value);
-        IViewBuilder Property<TValue>(AvaloniaProperty property, TValue value, Func<TValue, TValue, bool> comparer);
+        IViewBuilder Property<TValue>(AvaloniaProperty<TValue> property, TValue value);
+        IViewBuilder Property<TValue>(AvaloniaProperty<TValue> property, TValue value, Func<TValue, TValue, bool> comparer);
         IViewBuilder Subscribe<TValue>(AvaloniaProperty<TValue> property, Action<TValue> action, SubPatchOptions? patchOptions = null);
         IViewBuilder Subscribe<TValue>(RoutedEvent<TValue> @event, Action<TValue> action, SubPatchOptions? patchOptions = null) where TValue : RoutedEventArgs;
     }

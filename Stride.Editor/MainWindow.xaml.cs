@@ -28,9 +28,9 @@ namespace Stride.Editor
         public MainWindow()
         {
             this.InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
+// #if DEBUG
+//             this.AttachDevTools();
+// #endif
             using var initScope = new TimedScope(LoggingScope.Global($"{nameof(MainWindow)}.InitializeServices"));
 
             Session = new Session();

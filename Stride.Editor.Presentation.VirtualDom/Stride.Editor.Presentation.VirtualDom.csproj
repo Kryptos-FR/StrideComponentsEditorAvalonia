@@ -1,28 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <Platforms>x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.12" />
+    <PackageReference Include="Avalonia" Version="0.10.15" />
     <!--<PackageReference Include="Avalonia.Diagnostics" Version="0.9.9" />-->
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.9.12" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.12" />
-    <PackageReference Include="Dock.Avalonia" Version="0.9.12" />
-    <PackageReference Include="Dock.Model.Avalonia" Version="0.9.12" />
-    <PackageReference Include="Dock.Avalonia.Themes.Default" Version="0.9.12" />
-    <PackageReference Include="FSharp.Core" Version="4.6.2" />
-    <PackageReference Include="JaggerJo.Avalonia.FuncUI" Version="0.4.1" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="0.10.0" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
+    <PackageReference Include="Dock.Avalonia" Version="0.10.0" />
+    <PackageReference Include="Dock.Model.Avalonia" Version="0.10.0" />
+    <PackageReference Include="Dock.Avalonia.Themes.Default" Version="0.10.0" />
+    <PackageReference Include="FSharp.Core" Version="6.0.5" />
+    <PackageReference Include="Stride.Core.Design" Version="4.0.1.1428" />
+    <PackageReference Include="Stride.Core.Yaml" Version="4.0.1.1428" />
 
-    <PackageReference Include="Stride.Core.Design" Version="4.0.0.1-beta04" />
+
   </ItemGroup>
 
-  <ItemGroup>
-    <!--<Reference Include="Avalonia.FuncUI">
+  <ItemGroup><!--<Reference Include="Avalonia.FuncUI">
       <HintPath>..\..\..\Avalonia.FuncUI\src\Avalonia.FuncUI\bin\Debug\netstandard2.0\Avalonia.FuncUI.dll</HintPath>
     </Reference>-->
+  
+    <ProjectReference Include="..\Avalonia.FuncUI\src\Avalonia.FuncUI\Avalonia.FuncUI.fsproj" />
+    <ProjectReference Include="..\Avalonia.FuncUI\src\Avalonia.FuncUI.DSL\Avalonia.FuncUI.DSL.fsproj" />
   </ItemGroup>
 
 </Project>

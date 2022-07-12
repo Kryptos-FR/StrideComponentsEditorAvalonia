@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <Platforms>x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Stride.Core.Assets" Version="4.0.0.1-beta04" />
-    <PackageReference Include="Stride.Assets" Version="4.0.0.1-beta04" ExcludeAssets="contentFiles" />
-    <PackageReference Include="Stride.Assets.Models" Version="4.0.0.1-beta04" ExcludeAssets="contentFiles" />
+    <PackageReference Include="Stride.Assets" Version="4.0.1.1428" />
+    <PackageReference Include="Stride.Assets.Models" Version="4.0.1.1428" />
+    <PackageReference Include="Stride.Core.Assets" Version="4.0.1.1428" />
   </ItemGroup>
 
 </Project>

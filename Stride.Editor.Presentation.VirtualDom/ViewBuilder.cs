@@ -34,13 +34,13 @@ namespace Stride.Editor.Presentation
             return this;
         }
 
-        public IViewBuilder Property<TValue>(AvaloniaProperty property, TValue value)
+        public IViewBuilder Property<TValue>(AvaloniaProperty<TValue> property, TValue value)
         {
             Attrs.Add(Avalonia.FuncUI.Builder.AttrBuilder<TView>.CreateProperty(property, value, FSharpValueOption<FSharpFunc<Tuple<object, object>, bool>>.None));
             return this;
         }
 
-        public IViewBuilder Property<TValue>(AvaloniaProperty property, TValue value, Func<TValue, TValue, bool> comparer)
+        public IViewBuilder Property<TValue>(AvaloniaProperty<TValue> property, TValue value, Func<TValue, TValue, bool> comparer)
         {
             Attrs.Add(Avalonia.FuncUI.Builder.AttrBuilder<TView>.CreateProperty(property, value, FSharpValueOption<FSharpFunc<Tuple<object, object>, bool>>.Some(FuncConvert.FromFunc<Tuple<object, object>, bool>(t => comparer((TValue)t.Item1, (TValue)t.Item2)))));
             return this;

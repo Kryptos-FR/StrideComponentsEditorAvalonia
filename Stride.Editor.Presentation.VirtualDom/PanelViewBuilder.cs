@@ -9,7 +9,7 @@ using Microsoft.FSharp.Core;
 
 namespace Stride.Editor.Presentation.VirtualDom
 {
-    public class PanelViewBuilder<TView> : ViewBuilder<TView> where TView : Panel
+    public class PanelViewBuilder<TView> : ViewBuilder<TView> where TView : Avalonia.Controls.Panel
     {
         public IViewBuilder ContentMultiple(string property, IEnumerable<Types.IView> content)
         {

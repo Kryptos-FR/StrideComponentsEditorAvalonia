@@ -24,10 +24,10 @@ namespace Stride.Editor.Presentation.VirtualDom
                 {
                     if (FSharpOption<Content>.None != a.Content)
                     {
-                        var property = a.Content.Value.accessor.IsAvaloniaProperty
-                            ? (a.Content.Value.accessor as Accessor.AvaloniaProperty).Item.Name
-                            : (a.Content.Value.accessor as Accessor.InstanceProperty).Item.name;
-                        if (a.Content.Value.content is ViewContent.Single single)
+                        string property = a.Content.Value.Accessor.IsAvaloniaProperty
+                            ? (a.Content.Value.Accessor as Accessor.AvaloniaProperty).Item.Name
+                            : (a.Content.Value.Accessor as Accessor.InstanceProperty).Item.Name;
+                        if (a.Content.Value.Content is ViewContent.Single single)
                         {
                             var value = FSharpOption<IView>.None == single.Item
                                 ? null
@@ -36,20 +36,20 @@ namespace Stride.Editor.Presentation.VirtualDom
                         }
                         else
                         {
-                            var multi = a.Content.Value.content as ViewContent.Multiple;
+                            var multi = a.Content.Value.Content as ViewContent.Multiple;
                             return (property, multi.Item.Select(BuildViewObject).ToArray());
                         }
                     }
                     if (FSharpOption<Property>.None != a.Property)
                     {
-                        var property = a.Property.Value.accessor.IsAvaloniaProperty
-                            ? (a.Property.Value.accessor as Accessor.AvaloniaProperty).Item.Name
-                            : (a.Property.Value.accessor as Accessor.InstanceProperty).Item.name;
-                        return (property, a.Property.Value.value?.ToString());
+                        string property = a.Property.Value.Accessor.IsAvaloniaProperty
+                            ? (a.Property.Value.Accessor as Accessor.AvaloniaProperty).Item.Name
+                            : (a.Property.Value.Accessor as Accessor.InstanceProperty).Item.Name;
+                        return (property, a.Property.Value.Value?.ToString());
                     }
                     if (FSharpOption<Subscription>.None != a.Subscription)
                     {
-                        return (a.Subscription.Value.name, a.Subscription.Value.funcType.Name);
+                        return (a.Subscription.Value.Name, a.Subscription.Value.FuncType.Name);
                     }
                     return ("invalid", null);
                 }).ToArray(),
