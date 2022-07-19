@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Stride.Assets" Version="4.0.1.1428" />
-    <PackageReference Include="Stride.Assets.Models" Version="4.0.1.1428" />
-    <PackageReference Include="Stride.Core.Assets" Version="4.0.1.1428" />
+    <PackageReference Include="Stride.Assets" Version="4.1.0.1731" />
+    <PackageReference Include="Stride.Assets.Models" Version="4.1.0.1731" />
+    <PackageReference Include="Stride.Core.Assets" Version="4.1.0.1731" />
   </ItemGroup>
 
 </Project>
